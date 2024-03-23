@@ -14,7 +14,7 @@ namespace MicroJam10.Player
         private Transform _cam;
 
         [SerializeField]
-        private Transform _hands;
+        private Transform _hands, _flashlight;
 
         private Vector2 _mov;
         private float _verticalSpeed;
@@ -88,6 +88,7 @@ namespace MicroJam10.Player
             var forward = _cam.transform.forward.normalized * 2f;
             _hands.transform.position = new(transform.position.x + forward.x, _hands.transform.position.y, transform.position.z + forward.z);
             _hands.transform.rotation = _cam.transform.rotation;
+            _flashlight.transform.rotation = Quaternion.Euler(_flashlight.transform.rotation.eulerAngles.x, _cam.transform.rotation.eulerAngles.y, _flashlight.transform.rotation.eulerAngles.z);
         }
 
         public void OnMove(InputAction.CallbackContext value)
