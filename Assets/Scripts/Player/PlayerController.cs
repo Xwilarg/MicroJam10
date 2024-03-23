@@ -1,4 +1,5 @@
 using MicroJam10.SO;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -56,6 +57,30 @@ namespace MicroJam10.Player
         public void OnMove(InputAction.CallbackContext value)
         {
             _mov = value.ReadValue<Vector2>();
+        }
+
+        private RaycastHit? GetInteractionTarget()
+        {
+            if (Physics.Raycast(new Ray(_cam.position, _cam.forward), out RaycastHit interInfo, 100f, ~(1 << LayerMask.GetMask("Player"))))
+            {
+                return interInfo;
+            }
+            return null;
+        }
+
+        private void OnDrawGizmos()
+        {
+            var target = GetInteractionTarget();
+            if (target != null)
+            {
+                Gizmos.color = Color.blue;
+                Gizmos.DrawLine(_cam.transform.position, target.Value.point);
+            }
+            else
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(_cam.transform.position, _cam.transform.position + _cam.transform.forward * 10f);
+            }
         }
     }
 }
