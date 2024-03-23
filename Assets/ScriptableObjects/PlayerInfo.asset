@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5beca29ec77b3864ab3664c07fa255af, type: 3}
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
-  ForceMultiplier: 0.05
+  ForceMultiplier: 0.125
   GravityMultiplicator: 0.001

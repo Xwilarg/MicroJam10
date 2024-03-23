@@ -866,7 +866,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40066466, y: -0.000000038615987, z: 0.000000016886752, w: 0.9162248}
+  m_LocalRotation: {x: 0.40066466, y: 0.000000038615987, z: -0.000000016886752, w: 0.9162248}
   m_LocalPosition: {x: 5.75, y: 7.38, z: 3.1999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -982,10 +982,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 951
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 1
@@ -1413,7 +1413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572475623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40066466, y: -0.000000038615987, z: 0.000000016886752, w: 0.9162248}
+  m_LocalRotation: {x: 0.40066466, y: 0.000000038615987, z: -0.000000016886752, w: 0.9162248}
   m_LocalPosition: {x: 5.75, y: 7.38, z: 3.1999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1433,7 +1433,7 @@ GameObject:
   - component: {fileID: 2033592841}
   - component: {fileID: 2033592840}
   - component: {fileID: 2033592839}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pentacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
