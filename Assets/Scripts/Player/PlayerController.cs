@@ -64,22 +64,25 @@ namespace MicroJam10.Player
 
         private void Update()
         {
-            var target = GetInteractionTarget();
-            var havePropTarget = target != null && target.Value.collider.CompareTag("Prop");
+            if (_carriedProp == null)
+            {
+                var target = GetInteractionTarget();
+                var havePropTarget = target != null && target.Value.collider.CompareTag("Prop");
 
-            if (!havePropTarget && _interactionTarget != null)
-            {
-                _interactionTarget.ToggleSelectionHint(false);
-                _interactionTarget = null;
-            }
-            else if (havePropTarget && (_interactionTarget == null || _interactionTarget.gameObject.GetInstanceID() != target.Value.collider.gameObject.GetInstanceID()))
-            {
-                if (_interactionTarget != null)
+                if (!havePropTarget && _interactionTarget != null)
                 {
                     _interactionTarget.ToggleSelectionHint(false);
+                    _interactionTarget = null;
                 }
-                _interactionTarget = target.Value.collider.GetComponent<Prop>();
-                _interactionTarget.ToggleSelectionHint(true);
+                else if (havePropTarget && (_interactionTarget == null || _interactionTarget.gameObject.GetInstanceID() != target.Value.collider.gameObject.GetInstanceID()))
+                {
+                    if (_interactionTarget != null)
+                    {
+                        _interactionTarget.ToggleSelectionHint(false);
+                    }
+                    _interactionTarget = target.Value.collider.GetComponent<Prop>();
+                    _interactionTarget.ToggleSelectionHint(true);
+                }
             }
 
             var forward = _cam.transform.forward.normalized * 2f;
@@ -107,6 +110,12 @@ namespace MicroJam10.Player
                         _carriedProp = _interactionTarget;
                         _interactionTarget = null;
                     }
+                }
+                else
+                {
+                    _carriedProp.ToggleStatic(false);
+                    _carriedProp.transform.parent = null;
+                    _carriedProp = null;
                 }
             }
         }
