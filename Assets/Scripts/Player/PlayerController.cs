@@ -92,8 +92,7 @@ namespace MicroJam10.Player
             {
                 var haveSpotTarget = target != null && target.Value.collider.CompareTag("Spot");
 
-
-                if (!haveSpotTarget && _spotTarget != null)
+                if (!haveSpotTarget && _spotTarget != null && !_spotTarget.IsBusy)
                 {
                     _spotTarget.ToggleLight(false);
                     _spotTarget = null;
@@ -103,8 +102,6 @@ namespace MicroJam10.Player
                     _spotTarget = target.Value.collider.GetComponent<PentacleSpot>();
                     _spotTarget.ToggleLight(true);
                 }
-
-
             }
 
             var forward = _cam.transform.forward.normalized * 2f;
@@ -131,6 +128,12 @@ namespace MicroJam10.Player
                         _interactionTarget.transform.parent = _hands.transform;
                         _interactionTarget.transform.localPosition = Vector3.zero;
                         _carriedProp = _interactionTarget;
+                        if (_carriedProp.Spot != null)
+                        {
+                            _carriedProp.Spot.SetProp(null);
+                            _carriedProp.Spot.ToggleLight(false);
+                            _carriedProp.Spot = null;
+                        }
                         _interactionTarget = null;
                     }
                 }
@@ -138,6 +141,13 @@ namespace MicroJam10.Player
                 {
                     _carriedProp.ToggleStatic(false);
                     _carriedProp.transform.parent = null;
+                    if (_spotTarget != null)
+                    {
+                        _spotTarget.SetProp(_carriedProp);
+                        _carriedProp.Spot = _spotTarget;
+                        _carriedProp.transform.position = _spotTarget.transform.position;
+                        _spotTarget = null;
+                    }
                     _carriedProp = null;
                 }
             }

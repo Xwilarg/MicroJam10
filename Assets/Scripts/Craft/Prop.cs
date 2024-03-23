@@ -7,6 +7,8 @@ namespace MicroJam10.Craft
         private GameObject _selectionHint;
         private Rigidbody _rb;
 
+        public PentacleSpot Spot { set; get; }
+
         private void Awake()
         {
             _selectionHint = transform.GetChild(0).gameObject;
