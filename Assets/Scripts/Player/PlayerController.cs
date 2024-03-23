@@ -7,6 +7,8 @@ namespace MicroJam10.Player
 {
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController Instance { private set; get; }
+
         [SerializeField]
         private PlayerInfo _info;
 
@@ -15,6 +17,9 @@ namespace MicroJam10.Player
 
         [SerializeField]
         private Transform _hands, _flashlight;
+
+        [SerializeField]
+        private GameObject _deadBody;
 
         private Vector2 _mov;
         private float _verticalSpeed;
@@ -26,8 +31,12 @@ namespace MicroJam10.Player
         private PentacleSpot _spotTarget;
         private Prop _carriedProp;
 
+        private bool _isDead;
+
         private void Awake()
         {
+            Instance = this;
+
             _controller = GetComponent<CharacterController>();
             _mapLayer = 1 << LayerMask.NameToLayer("Map");
             _propSelectionLayer = 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Prop");
@@ -38,6 +47,8 @@ namespace MicroJam10.Player
 
         private void FixedUpdate()
         {
+            if (_isDead) return;
+
             var pos = _mov;
             Vector3 desiredMove = _cam.transform.forward * pos.y + _cam.transform.right * pos.x;
 
@@ -67,6 +78,8 @@ namespace MicroJam10.Player
 
         private void Update()
         {
+            if (_isDead) return;
+
             if (!GameManager.Instance.DidRitualStart)
             {
                 var target = GetInteractionTarget(_carriedProp == null ? _propSelectionLayer : _pentacleSelectionLayer);
@@ -112,6 +125,14 @@ namespace MicroJam10.Player
             _hands.transform.position = new(transform.position.x + forward.x, _hands.transform.position.y, transform.position.z + forward.z);
             _hands.transform.rotation = _cam.transform.rotation;
             _flashlight.transform.rotation = Quaternion.Euler(_flashlight.transform.rotation.eulerAngles.x, _cam.transform.rotation.eulerAngles.y, _flashlight.transform.rotation.eulerAngles.z);
+        }
+
+        public void Die()
+        {
+            _isDead = true;
+            _deadBody.SetActive(true);
+            _flashlight.gameObject.SetActive(false);
+            GetComponent<MeshRenderer>().enabled = false;
         }
 
         public void OnMove(InputAction.CallbackContext value)

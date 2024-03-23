@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using MicroJam10.Player;
+using System.Collections;
+using UnityEngine;
 
 namespace MicroJam10
 {
@@ -8,6 +10,9 @@ namespace MicroJam10
 
         [SerializeField]
         private Light _globalLight;
+
+        [SerializeField]
+        private GameObject _blackScreen;
 
         private float _timer;
 
@@ -43,7 +48,19 @@ namespace MicroJam10
                 _timer += Time.deltaTime * .5f;
                 var val = Mathf.Lerp(1f, .2f, _timer);
                 _globalLight.color = new(1f, val, val);
+                if (_timer >= 1f)
+                {
+                    StartCoroutine(Die());
+                }
             }
+        }
+
+        private IEnumerator Die()
+        {
+            _blackScreen.SetActive(true);
+            PlayerController.Instance.Die();
+            yield return new WaitForSeconds(.2f);
+            _blackScreen.SetActive(false);
         }
     }
 }
