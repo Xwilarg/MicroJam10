@@ -27,7 +27,7 @@ namespace MicroJam10
         private GameObject _bloodMiddle;
 
         [SerializeField]
-        private FormulaInfo _winFormula;
+        private FormulaInfo _winFormula, _knifeFormula;
 
         private float _timer;
 
@@ -68,6 +68,18 @@ namespace MicroJam10
             }
         }
 
+        private bool IsRecipeValide(FormulaInfo formula)
+        {
+            for (int i = 0; i < formula.Props.Length; i++)
+            {
+                if (formula.Props[i].Name != _spots[i].Prop.Info.Name)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private IEnumerator Die()
         {
             _blackScreen.SetActive(true);
@@ -75,16 +87,11 @@ namespace MicroJam10
             yield return new WaitForSeconds(.2f);
             _blackScreen.SetActive(false);
 
-            bool isGood = true;
-            for (int i = 0; i < _winFormula.Props.Length; i++)
+            if (IsRecipeValide(_knifeFormula))
             {
-                if (_winFormula.Props[i].Name != _spots[i].Prop.Info.Name)
-                {
-                    isGood = false;
-                    break;
-                }
+                PlayerController.Instance.GetKnived();
             }
-            if (isGood)
+            else if (IsRecipeValide(_winFormula))
             {
                 // TODO
             }

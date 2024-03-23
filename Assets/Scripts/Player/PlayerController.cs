@@ -21,6 +21,9 @@ namespace MicroJam10.Player
         [SerializeField]
         private GameObject _deadBody;
 
+        [SerializeField]
+        private GameObject _knives;
+
         private Vector2 _mov;
         private float _verticalSpeed;
         private CharacterController _controller;
@@ -146,6 +149,14 @@ namespace MicroJam10.Player
             _deadBody.SetActive(true);
             _flashlight.gameObject.SetActive(false);
             GetComponent<MeshRenderer>().enabled = false;
+            ResetState();
+        }
+
+        public void GetKnived()
+        {
+            _isDead = true;
+            _flashlight.gameObject.SetActive(false);
+            _knives.SetActive(true);
             ResetState();
         }
 
