@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1132b84010a9d04bb653a8f07428404
+guid: c7e7b03e09d6c6945ae5b262e7c2bf85
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Magicline
+  - Peanut Butter
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

@@ -839,9 +839,9 @@ MonoBehaviour:
     Then continue
     with the knife
 
-    The continue with the book
+    And continue with the book
 
-    And the diamand
+    Then the diamand
 
 
     The
@@ -850,8 +850,8 @@ MonoBehaviour:
     So be sure
     it is right!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e927dcffe69e84c4998babc18719ee08, type: 2}
-  m_sharedMaterial: {fileID: -7558238741181882895, guid: e927dcffe69e84c4998babc18719ee08, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ac10b5d52a8d5e0439e3a2863e1e3d8a, type: 2}
+  m_sharedMaterial: {fileID: -7861971077935184451, guid: ac10b5d52a8d5e0439e3a2863e1e3d8a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -940,7 +940,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7558238741181882895, guid: e927dcffe69e84c4998babc18719ee08, type: 2}
+  - {fileID: -7861971077935184451, guid: ac10b5d52a8d5e0439e3a2863e1e3d8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
