@@ -16,6 +16,8 @@ namespace MicroJam10.Player
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void FixedUpdate()
