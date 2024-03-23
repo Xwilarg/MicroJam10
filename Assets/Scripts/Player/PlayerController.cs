@@ -1,5 +1,5 @@
+using MicroJam10.Craft;
 using MicroJam10.SO;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,9 +17,14 @@ namespace MicroJam10.Player
         private float _verticalSpeed;
         private CharacterController _controller;
 
+        private int _propSelectionLayer;
+
+        private Prop _interactionTarget;
+
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
+            _propSelectionLayer = 1 << LayerMask.GetMask("Map", "Prop");
 
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -50,8 +55,28 @@ namespace MicroJam10.Player
                 moveDir.y += _verticalSpeed;
             }
 
-            var p = transform.position;
             _controller.Move(moveDir);
+        }
+
+        private void Update()
+        {
+            var target = GetInteractionTarget();
+            var havePropTarget = target != null && target.Value.collider.CompareTag("Prop");
+
+            if (!havePropTarget && _interactionTarget != null)
+            {
+                _interactionTarget.ToggleSelectionHint(false);
+                _interactionTarget = null;
+            }
+            else if (havePropTarget && (_interactionTarget == null || _interactionTarget.gameObject.GetInstanceID() != target.Value.collider.gameObject.GetInstanceID()))
+            {
+                if (_interactionTarget != null)
+                {
+                    _interactionTarget.ToggleSelectionHint(false);
+                }
+                _interactionTarget = target.Value.collider.GetComponent<Prop>();
+                _interactionTarget.ToggleSelectionHint(true);
+            }
         }
 
         public void OnMove(InputAction.CallbackContext value)
@@ -59,9 +84,9 @@ namespace MicroJam10.Player
             _mov = value.ReadValue<Vector2>();
         }
 
-        private RaycastHit? GetInteractionTarget()
+        public RaycastHit? GetInteractionTarget()
         {
-            if (Physics.Raycast(new Ray(_cam.position, _cam.forward), out RaycastHit interInfo, 100f, ~(1 << LayerMask.GetMask("Player"))))
+            if (Physics.Raycast(new Ray(_cam.position, _cam.forward), out RaycastHit interInfo, 100f, ~_propSelectionLayer))
             {
                 return interInfo;
             }
@@ -73,7 +98,7 @@ namespace MicroJam10.Player
             var target = GetInteractionTarget();
             if (target != null)
             {
-                Gizmos.color = Color.blue;
+                Gizmos.color = target.Value.collider.CompareTag("Prop") ? Color.blue : Color.red;
                 Gizmos.DrawLine(_cam.transform.position, target.Value.point);
             }
             else
