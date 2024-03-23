@@ -9,6 +9,9 @@ namespace MicroJam10.Player
         [SerializeField]
         private PlayerInfo _info;
 
+        [SerializeField]
+        private Transform _cam;
+
         private Vector2 _mov;
         private float _verticalSpeed;
         private CharacterController _controller;
@@ -23,7 +26,7 @@ namespace MicroJam10.Player
         private void FixedUpdate()
         {
             var pos = _mov;
-            Vector3 desiredMove = transform.forward * pos.y + transform.right * pos.x;
+            Vector3 desiredMove = _cam.transform.forward * pos.y + _cam.transform.right * pos.x;
 
             // Get a normal for the surface that is being touched to move along it
             Physics.SphereCast(transform.position, _controller.radius, Vector3.down, out RaycastHit hitInfo,
