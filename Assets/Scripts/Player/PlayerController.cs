@@ -20,7 +20,7 @@ namespace MicroJam10.Player
         private float _verticalSpeed;
         private CharacterController _controller;
 
-        private int _propSelectionLayer, _pentacleSelectionLayer;
+        private int _mapLayer, _propSelectionLayer, _pentacleSelectionLayer;
 
         private Prop _interactionTarget;
         private PentacleSpot _spotTarget;
@@ -29,6 +29,7 @@ namespace MicroJam10.Player
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
+            _mapLayer = 1 << LayerMask.GetMask("Map");
             _propSelectionLayer = ~(1 << LayerMask.GetMask("Map", "Prop"));
             _pentacleSelectionLayer = ~(1 << LayerMask.GetMask("Map", "Spot"));
 
@@ -42,7 +43,7 @@ namespace MicroJam10.Player
 
             // Get a normal for the surface that is being touched to move along it
             Physics.SphereCast(transform.position, _controller.radius, Vector3.down, out RaycastHit hitInfo,
-                               _controller.height / 2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+                               _controller.height / 2f, _mapLayer, QueryTriggerInteraction.Ignore);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
             Vector3 moveDir = Vector3.zero;
