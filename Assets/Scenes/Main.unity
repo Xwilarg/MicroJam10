@@ -3323,6 +3323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: standingCandle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5027082944408674291, guid: 4eb382ae45f66394fafa88499603d85c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5658801387012031817, guid: 4eb382ae45f66394fafa88499603d85c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.896958
