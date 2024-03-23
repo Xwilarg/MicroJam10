@@ -29,9 +29,9 @@ namespace MicroJam10.Player
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
-            _mapLayer = 1 << LayerMask.GetMask("Map");
-            _propSelectionLayer = ~(1 << LayerMask.GetMask("Map", "Prop"));
-            _pentacleSelectionLayer = ~(1 << LayerMask.GetMask("Map", "Spot"));
+            _mapLayer = 1 << LayerMask.NameToLayer("Map");
+            _propSelectionLayer = 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Prop");
+            _pentacleSelectionLayer = 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Spot");
 
             Cursor.lockState = CursorLockMode.Locked;
         }

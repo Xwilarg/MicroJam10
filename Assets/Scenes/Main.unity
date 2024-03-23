@@ -1433,7 +1433,7 @@ GameObject:
   - component: {fileID: 2033592841}
   - component: {fileID: 2033592840}
   - component: {fileID: 2033592839}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Pentacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1537,15 +1537,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 277247132401412447, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.321
+      value: 5.2977
       objectReference: {fileID: 0}
     - target: {fileID: 277247132401412447, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: 277247132401412447, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.693
+      value: 6.7094
       objectReference: {fileID: 0}
     - target: {fileID: 277247132401412447, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1580,8 +1580,24 @@ PrefabInstance:
       value: PentacleSpot
       objectReference: {fileID: 0}
     - target: {fileID: 5233656618575816911, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233656618575816911, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249082080758538533, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+      propertyPath: m_Range
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249082080758538533, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249082080758538533, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+      propertyPath: m_Intensity
+      value: 5.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
