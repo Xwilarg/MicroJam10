@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a12ad79590ea248a200ea9835ec929, type: 3}
+  m_Name: WinningRecipe
+  m_EditorClassIdentifier: 
+  Props:
+  - {fileID: 11400000, guid: 6c31e7671808abe45bcac8769b3b3510, type: 2}
+  - {fileID: 11400000, guid: 75018066ad6c0514dabd1b37e3b44198, type: 2}
+  - {fileID: 11400000, guid: 9aab1533b88c0da428687bb24debfd5b, type: 2}
+  - {fileID: 11400000, guid: cf87b412ffb30844fb4da197cdd7276c, type: 2}
+  - {fileID: 11400000, guid: 5fc459e1f5c2da041b8aee60576f6dfb, type: 2}

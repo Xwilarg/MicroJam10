@@ -1,13 +1,19 @@
-﻿using UnityEngine;
+﻿using MicroJam10.SO;
+using UnityEngine;
 
 namespace MicroJam10.Craft
 {
     public class Prop : MonoBehaviour
     {
+        [SerializeField]
+        private PropInfo _info;
+
         private GameObject _selectionHint;
         private Rigidbody _rb;
 
         public PentacleSpot Spot { set; get; }
+
+        public PropInfo Info => _info;
 
         private void Awake()
         {

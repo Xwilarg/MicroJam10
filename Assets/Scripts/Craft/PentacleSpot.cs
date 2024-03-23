@@ -24,6 +24,8 @@ namespace MicroJam10.Craft
             _prop = p;
         }
 
+        public Prop Prop => _prop;
+
         public bool IsBusy => _prop != null;
     }
 }

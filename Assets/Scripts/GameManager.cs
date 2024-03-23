@@ -1,6 +1,9 @@
-﻿using MicroJam10.Player;
+﻿using MicroJam10.Craft;
+using MicroJam10.Player;
+using MicroJam10.SO;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace MicroJam10
 {
@@ -18,7 +21,13 @@ namespace MicroJam10
         private Light[] _pentacleLights;
 
         [SerializeField]
+        private PentacleSpot[] _spots;
+
+        [SerializeField]
         private GameObject _bloodMiddle;
+
+        [SerializeField]
+        private FormulaInfo _winFormula;
 
         private float _timer;
 
@@ -31,6 +40,8 @@ namespace MicroJam10
         private void Awake()
         {
             Instance = this;
+
+            Assert.AreEqual(_winFormula.Props.Length, _spots.Length);
         }
 
         private void Update()
@@ -60,9 +71,28 @@ namespace MicroJam10
         private IEnumerator Die()
         {
             _blackScreen.SetActive(true);
-            PlayerController.Instance.Die();
+
             yield return new WaitForSeconds(.2f);
             _blackScreen.SetActive(false);
+
+            bool isGood = true;
+            for (int i = 0; i < _winFormula.Props.Length; i++)
+            {
+                if (_winFormula.Props[i].Name != _spots[i].Prop.Info.Name)
+                {
+                    isGood = false;
+                    break;
+                }
+            }
+            if (isGood)
+            {
+                // TODO
+            }
+            else
+            {
+                PlayerController.Instance.Die();
+            }
+
             _globalLight.color = Color.white;
             _bloodMiddle.SetActive(true);
             foreach (var p in _pentacleLights)

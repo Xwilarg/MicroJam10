@@ -1027,26 +1027,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The knife goes on the point the closest to the altar
+  m_text: 'From prayer''s point, life''s gift is given
 
-    From inside
-    the gold go to the clock-wise
+    Drips blood''s ancient
+    knowledge, spoken by none
 
-    Place the jaw on the next one
+    Sacrifice all your vast riches, all of your wealth
 
-    Then continue
-    with the knife
+    to
+    pay for the ferry, rightfully bidden
 
-    And continue with the book
+    Your love left aside, flesh torn from
+    bone
 
-    Then the diamand
-
-
-    The
-    circle will automatically activate once all elements are here
-
-    So be sure
-    it is right!'
+    Then breathe your last breath, encircled, alone.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac10b5d52a8d5e0439e3a2863e1e3d8a, type: 2}
   m_sharedMaterial: {fileID: -7861971077935184451, guid: ac10b5d52a8d5e0439e3a2863e1e3d8a, type: 2}
@@ -1085,7 +1079,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 20
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1441,7 +1435,14 @@ MonoBehaviour:
   - {fileID: 2089110262}
   - {fileID: 1577749887}
   - {fileID: 1784477015}
+  _spots:
+  - {fileID: 603837612}
+  - {fileID: 2089110259}
+  - {fileID: 1577749884}
+  - {fileID: 1784477012}
+  - {fileID: 396119549}
   _bloodMiddle: {fileID: 1209185172}
+  _winFormula: {fileID: 11400000, guid: f9f80b102472ee5448627ed0f57d4a97, type: 2}
 --- !u!1 &392243159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1504,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 277247132401412447, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
   m_PrefabInstance: {fileID: 6243789866255356401}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &396119549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8126563320709077308, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+  m_PrefabInstance: {fileID: 6243789866255356401}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99f4a13ffb85874c9b3a73957837e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &396119552 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 6249082080758538533, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
@@ -1912,7 +1924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2920299657419908042, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Name
-      value: PentacleSpot (1)
+      value: PentacleSpot 1
       objectReference: {fileID: 0}
     - target: {fileID: 5233656618575816911, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Enabled
@@ -1952,6 +1964,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 277247132401412447, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
   m_PrefabInstance: {fileID: 603837610}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &603837612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8126563320709077308, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+  m_PrefabInstance: {fileID: 603837610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99f4a13ffb85874c9b3a73957837e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &603837615 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 6249082080758538533, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
@@ -2007,7 +2030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2920299657419908042, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Name
-      value: PentacleSpot (2)
+      value: PentacleSpot 2
       objectReference: {fileID: 0}
     - target: {fileID: 5233656618575816911, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Enabled
@@ -2866,7 +2889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4066999, y: -0.000000022230152, z: 0.0000000098964295, w: 0.9135618}
+  m_LocalRotation: {x: 0.4066999, y: 0.000000022230152, z: -0.0000000098964295, w: 0.9135618}
   m_LocalPosition: {x: 6.769, y: 7.564, z: 3.9379997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4512,7 +4535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2920299657419908042, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Name
-      value: PentacleSpot (3)
+      value: PentacleSpot 3
       objectReference: {fileID: 0}
     - target: {fileID: 5233656618575816911, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Enabled
@@ -4819,7 +4842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572475623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4066999, y: -0.000000022230152, z: 0.0000000098964295, w: 0.9135618}
+  m_LocalRotation: {x: 0.4066999, y: 0.000000022230152, z: -0.0000000098964295, w: 0.9135618}
   m_LocalPosition: {x: 6.769, y: 7.564, z: 3.9379997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4827,6 +4850,17 @@ Transform:
   - {fileID: 1156035509}
   m_Father: {fileID: 1553098151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577749884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8126563320709077308, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+  m_PrefabInstance: {fileID: 1480226068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99f4a13ffb85874c9b3a73957837e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &1577749887 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 6249082080758538533, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
@@ -5499,7 +5533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2920299657419908042, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Name
-      value: PentacleSpot (4)
+      value: PentacleSpot 4
       objectReference: {fileID: 0}
     - target: {fileID: 5233656618575816911, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Enabled
@@ -5539,6 +5573,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 277247132401412447, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
   m_PrefabInstance: {fileID: 1784477010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1784477012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8126563320709077308, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+  m_PrefabInstance: {fileID: 1784477010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99f4a13ffb85874c9b3a73957837e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &1784477015 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 6249082080758538533, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
@@ -5638,11 +5683,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 396119548}
   - {fileID: 603837611}
   - {fileID: 665009905}
   - {fileID: 1480226069}
   - {fileID: 1784477011}
+  - {fileID: 396119548}
   m_Father: {fileID: 1755044931}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1821196523
@@ -6314,8 +6359,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 1, z: 4}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5, y: 1, z: 2.3393502}
+  m_Center: {x: 0, y: 0, z: -0.8303249}
 --- !u!114 &2075985383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6330,6 +6375,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _worldCamContainer: {fileID: 1553098150}
   _textCamContainer: {fileID: 7142366}
+--- !u!114 &2089110259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8126563320709077308, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
+  m_PrefabInstance: {fileID: 665009904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99f4a13ffb85874c9b3a73957837e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &2089110262 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 6249082080758538533, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
@@ -6454,6 +6510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 135
       objectReference: {fileID: 0}
+    - target: {fileID: 8193166728884578482, guid: ceb2bcd7038071d48b58c4536008fba8, type: 3}
+      propertyPath: _info
+      value: 
+      objectReference: {fileID: 11400000, guid: cdaee3c998f61f0419c41aee1019f30e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6537,6 +6597,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 183247929551395274, guid: f60fb7507f460cc40900f0c6dd8137f4, type: 3}
+      propertyPath: _info
+      value: 
+      objectReference: {fileID: 11400000, guid: cf87b412ffb30844fb4da197cdd7276c, type: 2}
     - target: {fileID: 2742521000969823342, guid: f60fb7507f460cc40900f0c6dd8137f4, type: 3}
       propertyPath: m_Name
       value: Book
@@ -6708,6 +6772,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8506662416934708287, guid: 39373f51d0e003641904e46fb3d18665, type: 3}
+      propertyPath: _info
+      value: 
+      objectReference: {fileID: 11400000, guid: 9aab1533b88c0da428687bb24debfd5b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6850,6 +6918,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 331761183136156247, guid: de827dc55b9a88f4384d27e31138babe, type: 3}
+      propertyPath: _info
+      value: 
+      objectReference: {fileID: 11400000, guid: e19efba5760a99a44ae8f56845d55792, type: 2}
     - target: {fileID: 462031625195571225, guid: de827dc55b9a88f4384d27e31138babe, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -7015,7 +7087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2920299657419908042, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Name
-      value: PentacleSpot
+      value: PentacleSpot 5
       objectReference: {fileID: 0}
     - target: {fileID: 5233656618575816911, guid: 9e7ec3b893c3c08469e0b8d08855b7c3, type: 3}
       propertyPath: m_Enabled
@@ -7102,6 +7174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 37.504
       objectReference: {fileID: 0}
+    - target: {fileID: 3618784007734091167, guid: f2b5bbf631b091f49bab274cbbbbf6a5, type: 3}
+      propertyPath: _info
+      value: 
+      objectReference: {fileID: 11400000, guid: 5fc459e1f5c2da041b8aee60576f6dfb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7219,12 +7295,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6355181637969492861, guid: 609e8a517cb2160418eefb0455761f26, type: 3}
       propertyPath: m_Name
-      value: coins
+      value: Coins
       objectReference: {fileID: 0}
     - target: {fileID: 8472769396516044025, guid: 609e8a517cb2160418eefb0455761f26, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8986448531747751641, guid: 609e8a517cb2160418eefb0455761f26, type: 3}
+      propertyPath: _info
+      value: 
+      objectReference: {fileID: 11400000, guid: 75018066ad6c0514dabd1b37e3b44198, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7304,6 +7384,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5916483194331420833, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
+      propertyPath: _info
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c31e7671808abe45bcac8769b3b3510, type: 2}
     - target: {fileID: 8547815921339016453, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
       propertyPath: m_Name
       value: Knife
