@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6249082080758538533}
   - component: {fileID: 6887611352070745716}
   - component: {fileID: 5233656618575816911}
+  - component: {fileID: 8126563320709077308}
   m_Layer: 9
   m_Name: PentacleSpot
   m_TagString: Spot
@@ -140,3 +141,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8126563320709077308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920299657419908042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99f4a13ffb85874c9b3a73957837e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

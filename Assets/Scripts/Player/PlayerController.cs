@@ -20,15 +20,17 @@ namespace MicroJam10.Player
         private float _verticalSpeed;
         private CharacterController _controller;
 
-        private int _propSelectionLayer;
+        private int _propSelectionLayer, _pentacleSelectionLayer;
 
         private Prop _interactionTarget;
+        private PentacleSpot _spotTarget;
         private Prop _carriedProp;
 
         private void Awake()
         {
             _controller = GetComponent<CharacterController>();
-            _propSelectionLayer = 1 << LayerMask.GetMask("Map", "Prop");
+            _propSelectionLayer = ~(1 << LayerMask.GetMask("Map", "Prop"));
+            _pentacleSelectionLayer = ~(1 << LayerMask.GetMask("Map", "Spot"));
 
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -64,9 +66,10 @@ namespace MicroJam10.Player
 
         private void Update()
         {
+            var target = GetInteractionTarget(_carriedProp == null ? _propSelectionLayer : _pentacleSelectionLayer);
+
             if (_carriedProp == null)
             {
-                var target = GetInteractionTarget();
                 var havePropTarget = target != null && target.Value.collider.CompareTag("Prop");
 
                 if (!havePropTarget && _interactionTarget != null)
@@ -83,6 +86,24 @@ namespace MicroJam10.Player
                     _interactionTarget = target.Value.collider.GetComponent<Prop>();
                     _interactionTarget.ToggleSelectionHint(true);
                 }
+            }
+            else
+            {
+                var haveSpotTarget = target != null && target.Value.collider.CompareTag("Spot");
+
+
+                if (!haveSpotTarget && _spotTarget != null)
+                {
+                    _spotTarget.ToggleLight(false);
+                    _spotTarget = null;
+                }
+                else if (haveSpotTarget && _spotTarget == null)
+                {
+                    _spotTarget = target.Value.collider.GetComponent<PentacleSpot>();
+                    _spotTarget.ToggleLight(true);
+                }
+
+
             }
 
             var forward = _cam.transform.forward.normalized * 2f;
@@ -121,9 +142,9 @@ namespace MicroJam10.Player
             }
         }
 
-        public RaycastHit? GetInteractionTarget()
+        public RaycastHit? GetInteractionTarget(int targetLayer)
         {
-            if (Physics.Raycast(new Ray(_cam.position, _cam.forward), out RaycastHit interInfo, 100f, ~_propSelectionLayer))
+            if (Physics.Raycast(new Ray(_cam.position, _cam.forward), out RaycastHit interInfo, 100f, targetLayer))
             {
                 return interInfo;
             }
@@ -132,7 +153,7 @@ namespace MicroJam10.Player
 
         private void OnDrawGizmos()
         {
-            var target = GetInteractionTarget();
+            var target = GetInteractionTarget(_propSelectionLayer);
             if (target != null)
             {
                 Gizmos.color = target.Value.collider.CompareTag("Prop") ? Color.blue : Color.red;
