@@ -67,41 +67,45 @@ namespace MicroJam10.Player
 
         private void Update()
         {
-            var target = GetInteractionTarget(_carriedProp == null ? _propSelectionLayer : _pentacleSelectionLayer);
-
-            if (_carriedProp == null)
+            if (!GameManager.Instance.DidRitualStart)
             {
-                var havePropTarget = target != null && target.Value.collider.CompareTag("Prop");
+                var target = GetInteractionTarget(_carriedProp == null ? _propSelectionLayer : _pentacleSelectionLayer);
 
-                if (!havePropTarget && _interactionTarget != null)
+                if (_carriedProp == null)
                 {
-                    _interactionTarget.ToggleSelectionHint(false);
-                    _interactionTarget = null;
-                }
-                else if (havePropTarget && (_interactionTarget == null || _interactionTarget.gameObject.GetInstanceID() != target.Value.collider.gameObject.GetInstanceID()))
-                {
-                    if (_interactionTarget != null)
+                    var havePropTarget = target != null && target.Value.collider.CompareTag("Prop");
+
+                    if (!havePropTarget && _interactionTarget != null)
                     {
                         _interactionTarget.ToggleSelectionHint(false);
+                        _interactionTarget = null;
                     }
-                    _interactionTarget = target.Value.collider.GetComponent<Prop>();
-                    _interactionTarget.ToggleSelectionHint(true);
+                    else if (havePropTarget && (_interactionTarget == null || _interactionTarget.gameObject.GetInstanceID() != target.Value.collider.gameObject.GetInstanceID()))
+                    {
+                        if (_interactionTarget != null)
+                        {
+                            _interactionTarget.ToggleSelectionHint(false);
+                        }
+                        _interactionTarget = target.Value.collider.GetComponent<Prop>();
+                        _interactionTarget.ToggleSelectionHint(true);
+                    }
                 }
-            }
-            else
-            {
-                var haveSpotTarget = target != null && target.Value.collider.CompareTag("Spot");
+                else
+                {
+                    var haveSpotTarget = target != null && target.Value.collider.CompareTag("Spot");
 
-                if (!haveSpotTarget && _spotTarget != null && !_spotTarget.IsBusy)
-                {
-                    _spotTarget.ToggleLight(false);
-                    _spotTarget = null;
+                    if (!haveSpotTarget && _spotTarget != null && !_spotTarget.IsBusy)
+                    {
+                        _spotTarget.ToggleLight(false);
+                        _spotTarget = null;
+                    }
+                    else if (haveSpotTarget && _spotTarget == null)
+                    {
+                        _spotTarget = target.Value.collider.GetComponent<PentacleSpot>();
+                        _spotTarget.ToggleLight(true);
+                    }
                 }
-                else if (haveSpotTarget && _spotTarget == null)
-                {
-                    _spotTarget = target.Value.collider.GetComponent<PentacleSpot>();
-                    _spotTarget.ToggleLight(true);
-                }
+
             }
 
             var forward = _cam.transform.forward.normalized * 2f;
