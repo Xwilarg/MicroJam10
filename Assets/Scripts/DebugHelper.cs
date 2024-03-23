@@ -1,4 +1,5 @@
-﻿using MicroJam10.Player;
+﻿#if UNITY_EDITOR
+using MicroJam10.Player;
 using UnityEditor;
 using UnityEngine;
 
@@ -26,3 +27,4 @@ namespace MicroJam10.City
         }
     }
 }
+#endif
