@@ -6,9 +6,6 @@ namespace MicroJam10.Craft
     {
         private Light _light;
 
-        [SerializeField]
-        private GameObject _bloodMiddle;
-
         private void Awake()
         {
             _light = GetComponent<Light>();
@@ -19,6 +16,7 @@ namespace MicroJam10.Craft
             if (other.CompareTag("Player"))
             {
                 _light.enabled = true;
+                GameManager.Instance.CheckVictory();
             }
         }
 

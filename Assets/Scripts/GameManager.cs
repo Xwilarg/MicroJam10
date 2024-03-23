@@ -14,6 +14,12 @@ namespace MicroJam10
         [SerializeField]
         private GameObject _blackScreen;
 
+        [SerializeField]
+        private Light[] _pentacleLights;
+
+        [SerializeField]
+        private GameObject _bloodMiddle;
+
         private float _timer;
 
         private bool _turnToRed;
@@ -21,21 +27,7 @@ namespace MicroJam10
         public bool DidRitualStart { private set; get; }
 
         private const int SpotsCount = 5;
-        private int _spotsLighted;
-        public int SpotsLighted
-        {
-            set
-            {
-                _spotsLighted = value;
-                if (_spotsLighted == SpotsCount)
-                {
-                    DidRitualStart = true;
-                    _turnToRed = true;
-                }
-            }
-            get => _spotsLighted;
-        }
-
+        public int SpotsLighted { set; get; }
         private void Awake()
         {
             Instance = this;
@@ -55,12 +47,28 @@ namespace MicroJam10
             }
         }
 
+        public void CheckVictory()
+        {
+            if (SpotsLighted == SpotsCount)
+            {
+                DidRitualStart = true;
+                _turnToRed = true;
+                PlayerController.Instance.ResetState();
+            }
+        }
+
         private IEnumerator Die()
         {
             _blackScreen.SetActive(true);
             PlayerController.Instance.Die();
             yield return new WaitForSeconds(.2f);
             _blackScreen.SetActive(false);
+            _globalLight.color = Color.white;
+            _bloodMiddle.SetActive(true);
+            foreach (var p in _pentacleLights)
+            {
+                p.enabled = false;
+            }
         }
     }
 }

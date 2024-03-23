@@ -47,7 +47,7 @@ namespace MicroJam10.Player
 
         private void FixedUpdate()
         {
-            if (_isDead) return;
+            if (_isDead || GameManager.Instance.DidRitualStart) return;
 
             var pos = _mov;
             Vector3 desiredMove = _cam.transform.forward * pos.y + _cam.transform.right * pos.x;
@@ -131,12 +131,22 @@ namespace MicroJam10.Player
             _flashlight.transform.rotation = Quaternion.Euler(_flashlight.transform.rotation.eulerAngles.x, _cam.transform.rotation.eulerAngles.y, _flashlight.transform.rotation.eulerAngles.z);
         }
 
+        public void ResetState()
+        {
+            if (_interactionTarget != null)
+            {
+                _interactionTarget.ToggleSelectionHint(false);
+                _interactionTarget = null;
+            }
+        }
+
         public void Die()
         {
             _isDead = true;
             _deadBody.SetActive(true);
             _flashlight.gameObject.SetActive(false);
             GetComponent<MeshRenderer>().enabled = false;
+            ResetState();
         }
 
         public void OnMove(InputAction.CallbackContext value)
