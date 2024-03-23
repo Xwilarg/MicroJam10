@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a8f90da96c21944a9785789e4780162
+guid: f1132b84010a9d04bb653a8f07428404
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Could Be Bloody
+  - Magicline
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
