@@ -107,15 +107,19 @@ namespace MicroJam10.Player
                 {
                     var haveSpotTarget = target != null && target.Value.collider.CompareTag("Spot");
 
-                    if (!haveSpotTarget && _spotTarget != null && !_spotTarget.IsBusy)
+                    if (!haveSpotTarget && _spotTarget != null)
                     {
                         _spotTarget.ToggleLight(false);
                         _spotTarget = null;
                     }
                     else if (haveSpotTarget && _spotTarget == null)
                     {
-                        _spotTarget = target.Value.collider.GetComponent<PentacleSpot>();
-                        _spotTarget.ToggleLight(true);
+                        var t = target.Value.collider.GetComponent<PentacleSpot>();
+                        if (!t.IsBusy)
+                        {
+                            _spotTarget = t;
+                            _spotTarget.ToggleLight(true);
+                        }
                     }
                 }
 
