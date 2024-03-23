@@ -13,6 +13,9 @@ namespace MicroJam10.Player
         [SerializeField]
         private Transform _cam;
 
+        [SerializeField]
+        private Transform _hands;
+
         private Vector2 _mov;
         private float _verticalSpeed;
         private CharacterController _controller;
@@ -20,6 +23,7 @@ namespace MicroJam10.Player
         private int _propSelectionLayer;
 
         private Prop _interactionTarget;
+        private Prop _carriedProp;
 
         private void Awake()
         {
@@ -77,11 +81,34 @@ namespace MicroJam10.Player
                 _interactionTarget = target.Value.collider.GetComponent<Prop>();
                 _interactionTarget.ToggleSelectionHint(true);
             }
+
+            var forward = _cam.transform.forward.normalized * 2f;
+            _hands.transform.position = new(transform.position.x + forward.x, _hands.transform.position.y, transform.position.z + forward.z);
+            _hands.transform.rotation = _cam.transform.rotation;
         }
 
         public void OnMove(InputAction.CallbackContext value)
         {
             _mov = value.ReadValue<Vector2>();
+        }
+
+        public void OnAction(InputAction.CallbackContext value)
+        {
+            if (value.performed)
+            {
+                if (_carriedProp == null)
+                {
+                    if (_interactionTarget != null)
+                    {
+                        _interactionTarget.ToggleSelectionHint(false);
+                        _interactionTarget.ToggleStatic(true);
+                        _interactionTarget.transform.parent = _hands.transform;
+                        _interactionTarget.transform.localPosition = Vector3.zero;
+                        _carriedProp = _interactionTarget;
+                        _interactionTarget = null;
+                    }
+                }
+            }
         }
 
         public RaycastHit? GetInteractionTarget()
