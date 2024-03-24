@@ -20,7 +20,11 @@ namespace MicroJam10.Craft
         public void SetProp(Prop p)
         {
             if (p == null) GameManager.Instance.SpotsLighted--;
-            else GameManager.Instance.SpotsLighted++;
+            else
+            {
+                GameManager.Instance.SpotsLighted++;
+                GameManager.Instance.CheckVictory();
+            }
             _prop = p;
         }
 

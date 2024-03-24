@@ -70,7 +70,7 @@ namespace MicroJam10
 
         public void CheckVictory()
         {
-            if (SpotsLighted == SpotsCount)
+            if (SpotsLighted == SpotsCount && ExecutionSpot.Instance.IsPlayerInside)
             {
                 DidRitualStart = true;
                 _turnToRed = true;
