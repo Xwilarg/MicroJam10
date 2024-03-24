@@ -2683,6 +2683,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0063598095
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.09289178
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.046338305
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2920,6 +2936,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 7899046818392605904, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8547815921339016453, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
       propertyPath: m_Name
       value: Knife Variant (3)
@@ -4233,7 +4253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4006647, y: 6.0591676e-16, z: -1.0008252e-15, w: 0.9162248}
+  m_LocalRotation: {x: 0.4006647, y: -6.0591676e-16, z: 1.0008252e-15, w: 0.9162248}
   m_LocalPosition: {x: 6.769, y: 7.564, z: 3.9379997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4644,6 +4664,22 @@ PrefabInstance:
     - target: {fileID: 5369079608604985539, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0063598095
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.09289178
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.046338305
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5206,6 +5242,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 7899046818392605904, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8547815921339016453, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
       propertyPath: m_Name
       value: Knife Variant (2)
@@ -5883,6 +5923,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.00635981
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.09289178
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.046338305
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6070,6 +6126,22 @@ PrefabInstance:
     - target: {fileID: 5369079608604985539, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.00635981
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.09289178
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.046338305
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6529,6 +6601,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 7899046818392605904, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8547815921339016453, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
       propertyPath: m_Name
       value: Knife Variant (1)
@@ -6912,6 +6988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 7899046818392605904, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8547815921339016453, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
       propertyPath: m_Name
       value: Knife Variant
@@ -7211,7 +7291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572475623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4006647, y: 6.0591676e-16, z: -1.0008252e-15, w: 0.9162248}
+  m_LocalRotation: {x: 0.4006647, y: -6.0591676e-16, z: 1.0008252e-15, w: 0.9162248}
   m_LocalPosition: {x: 6.769, y: 7.564, z: 3.9379997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8054,6 +8134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cultist
       objectReference: {fileID: 0}
+    - target: {fileID: 6882414375676135657, guid: c3c08ffb3ac90364abea697fb8d93e5e, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -8371,6 +8455,18 @@ PrefabInstance:
     - target: {fileID: 5369079608604985539, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.092891805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.x
+      value: -4.829197e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.046338316
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8717,6 +8813,18 @@ PrefabInstance:
     - target: {fileID: 5369079608604985539, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.092891805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.x
+      value: -4.829197e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.046338316
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10131,6 +10239,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.092891805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.x
+      value: -4.829197e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.046338316
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10154,6 +10274,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 5636086294908974275, guid: ceb2bcd7038071d48b58c4536008fba8, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6140546970610078998, guid: ceb2bcd7038071d48b58c4536008fba8, type: 3}
       propertyPath: m_Name
       value: Crown
@@ -10353,6 +10477,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4399902632046839227, guid: f60fb7507f460cc40900f0c6dd8137f4, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10452,6 +10580,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 5298805200105437262, guid: 39373f51d0e003641904e46fb3d18665, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5947530186091747739, guid: 39373f51d0e003641904e46fb3d18665, type: 3}
       propertyPath: m_Name
       value: Jaw
@@ -10848,6 +10980,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -60
       objectReference: {fileID: 0}
+    - target: {fileID: 4259904065490769446, guid: de827dc55b9a88f4384d27e31138babe, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10912,6 +11048,18 @@ PrefabInstance:
     - target: {fileID: 5369079608604985539, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.092891805
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.x
+      value: -4.829197e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017892960607876845, guid: d0861a3377f0ba64ab2c085c4a0c804c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.046338316
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11020,6 +11168,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 989700951031087598, guid: f2b5bbf631b091f49bab274cbbbbf6a5, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1638434732104261691, guid: f2b5bbf631b091f49bab274cbbbbf6a5, type: 3}
       propertyPath: m_Name
       value: Diamand
@@ -11179,6 +11331,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 4842170557018282664, guid: 609e8a517cb2160418eefb0455761f26, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6015107796179214791, guid: 609e8a517cb2160418eefb0455761f26, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.058
@@ -11314,6 +11470,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 521027022}
     m_Modifications:
+    - target: {fileID: 7899046818392605904, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8547815921339016453, guid: d7d2b1e7d42490f4f9c96bca8189ecac, type: 3}
       propertyPath: m_Name
       value: Knife
