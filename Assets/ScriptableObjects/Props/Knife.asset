@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Knife
   m_EditorClassIdentifier: 
   Name: Knife
+  Hint: The blade points towards the altar to display our mortality

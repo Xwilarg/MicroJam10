@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Book
   m_EditorClassIdentifier: 
   Name: Book
+  Hint: Knowledge leads to both sacrifice and wealth but not love or charisma

@@ -11,11 +11,6 @@ namespace MicroJam10
 {
     public class GameManager : MonoBehaviour
     {
-        private string[] hints = new[]
-        {
-            ""
-        };
-
         public static GameManager Instance { private set; get; }
 
         [SerializeField]
@@ -84,22 +79,24 @@ namespace MicroJam10
             }
         }
 
-        private bool IsRecipeValide(FormulaInfo formula)
+        private bool IsRecipeValide(FormulaInfo formula, out string hint)
         {
             for (int i = 0; i < formula.Props.Length; i++)
             {
                 if (formula.Props[i].Name != _spots[i].Prop.Info.Name)
                 {
+                    hint = formula.Props[i].Hint;
                     return false;
                 }
             }
+            hint = null;
             return true;
         }
 
-        private void Loose()
+        private void Loose(string hint)
         {
             _deathAnim.enabled = true;
-            _gameoverText.text = "Press 'enter' to restart";
+            _gameoverText.text = $"{hint}\nPress 'enter' to restart";
         }
 
         private IEnumerator Die()
@@ -109,18 +106,19 @@ namespace MicroJam10
             yield return new WaitForSeconds(.2f);
             _blackScreen.SetActive(false);
 
-            if (IsRecipeValide(_knifeFormula))
+            string hint;
+            if (IsRecipeValide(_knifeFormula, out var _))
             {
                 PlayerController.Instance.GetKnived();
             }
-            else if (IsRecipeValide(_winFormula))
+            else if (IsRecipeValide(_winFormula, out hint))
             {
                 // TODO
             }
             else
             {
                 PlayerController.Instance.Die();
-                StartCoroutine(WaitAndLoose());
+                StartCoroutine(WaitAndLoose(hint));
             }
 
             _globalLight.color = Color.white;
@@ -133,10 +131,10 @@ namespace MicroJam10
             _pendingRestart = true;
         }
 
-        private IEnumerator WaitAndLoose()
+        private IEnumerator WaitAndLoose(string hint)
         {
             yield return new WaitForSeconds(2f);
-            Loose();
+            Loose(hint);
         }
 
         public void Restart()

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Coins
   m_EditorClassIdentifier: 
   Name: Coins
+  Hint: If the left hand holds the blade the right is filled with coins

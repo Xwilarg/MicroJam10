@@ -6,5 +6,7 @@ namespace MicroJam10.SO
     public class PropInfo : ScriptableObject
     {
         public string Name;
+        [TextArea]
+        public string Hint;
     }
 }
