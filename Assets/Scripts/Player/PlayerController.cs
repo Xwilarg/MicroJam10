@@ -24,6 +24,9 @@ namespace MicroJam10.Player
         [SerializeField]
         private GameObject _knives;
 
+        [SerializeField]
+        private GameObject _playerModel;
+
         private Vector2 _mov;
         private float _verticalSpeed;
         private CharacterController _controller;
@@ -132,6 +135,7 @@ namespace MicroJam10.Player
             _hands.transform.position = new(transform.position.x + forward.x, _hands.transform.position.y, transform.position.z + forward.z);
             _hands.transform.rotation = _cam.transform.rotation;
             _flashlight.transform.rotation = Quaternion.Euler(_flashlight.transform.rotation.eulerAngles.x, _cam.transform.rotation.eulerAngles.y, _flashlight.transform.rotation.eulerAngles.z);
+            _playerModel.transform.rotation = Quaternion.Euler(_playerModel.transform.rotation.eulerAngles.x, _cam.transform.rotation.eulerAngles.y, _playerModel.transform.rotation.eulerAngles.z);
         }
 
         public void ResetState()
@@ -148,7 +152,7 @@ namespace MicroJam10.Player
             _isDead = true;
             _deadBody.SetActive(true);
             _flashlight.gameObject.SetActive(false);
-            GetComponent<MeshRenderer>().enabled = false;
+            _playerModel.SetActive(false);
             ResetState();
         }
 
