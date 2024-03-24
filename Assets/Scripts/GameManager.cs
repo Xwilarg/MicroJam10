@@ -2,6 +2,7 @@
 using MicroJam10.Player;
 using MicroJam10.SO;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -9,6 +10,11 @@ namespace MicroJam10
 {
     public class GameManager : MonoBehaviour
     {
+        private string[] hints = new[]
+        {
+            ""
+        };
+
         public static GameManager Instance { private set; get; }
 
         [SerializeField]
@@ -28,6 +34,12 @@ namespace MicroJam10
 
         [SerializeField]
         private FormulaInfo _winFormula, _knifeFormula;
+
+        [SerializeField]
+        private Animator _deathAnim;
+
+        [SerializeField]
+        private TMP_Text _gameoverText;
 
         private float _timer;
 
@@ -80,6 +92,12 @@ namespace MicroJam10
             return true;
         }
 
+        private void Loose()
+        {
+            _deathAnim.enabled = true;
+            _gameoverText.text = "Press 'enter' to restart";
+        }
+
         private IEnumerator Die()
         {
             _blackScreen.SetActive(true);
@@ -98,6 +116,7 @@ namespace MicroJam10
             else
             {
                 PlayerController.Instance.Die();
+                Loose();
             }
 
             _globalLight.color = Color.white;
