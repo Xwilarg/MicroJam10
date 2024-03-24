@@ -1830,10 +1830,6 @@ MonoBehaviour:
     m_ActionId: 7704a591-bb34-41bd-86e4-4dde6ee283bc
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 91c56df0-a6c2-4af5-a154-bc99605392b0
-    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1098877438}
         m_TargetAssemblyTypeName: MicroJam10.Player.PlayerController, Assembly-CSharp
@@ -1889,6 +1885,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: fac1dcb8-3723-46d0-a307-3f24e57094f1
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 373533537}
+        m_TargetAssemblyTypeName: MicroJam10.GameManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 163b3f4c-deac-43af-9664-fa942e099085
+    m_ActionName: Player/Restart[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -4051,7 +4063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4006647, y: -6.0591676e-16, z: 1.0008252e-15, w: 0.9162248}
+  m_LocalRotation: {x: 0.40066466, y: -0.000000038615987, z: 0.000000016886752, w: 0.9162248}
   m_LocalPosition: {x: 6.769, y: 7.564, z: 3.9379997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6839,7 +6851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572475623}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4006647, y: -6.0591676e-16, z: 1.0008252e-15, w: 0.9162248}
+  m_LocalRotation: {x: 0.40066466, y: -0.000000038615987, z: 0.000000016886752, w: 0.9162248}
   m_LocalPosition: {x: 6.769, y: 7.564, z: 3.9379997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -5,6 +5,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 namespace MicroJam10
 {
@@ -40,6 +41,8 @@ namespace MicroJam10
 
         [SerializeField]
         private TMP_Text _gameoverText;
+
+        private bool _pendingRestart;
 
         private float _timer;
 
@@ -125,12 +128,22 @@ namespace MicroJam10
             {
                 p.enabled = false;
             }
+
+            _pendingRestart = true;
         }
 
         private IEnumerator WaitAndLoose()
         {
             yield return new WaitForSeconds(2f);
             Loose();
+        }
+
+        public void Restart()
+        {
+            if (_pendingRestart)
+            {
+                SceneManager.LoadScene("Main");
+            }
         }
     }
 }
