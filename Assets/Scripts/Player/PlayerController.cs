@@ -217,6 +217,11 @@ namespace MicroJam10.Player
 
         public void PlayEndAnim()
         {
+            _anim.SetTrigger("End");
+        }
+
+        public void PlayWinAnim()
+        {
             _anim.SetTrigger("Win");
         }
 

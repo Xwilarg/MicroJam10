@@ -113,7 +113,7 @@ namespace MicroJam10
             }
             else if (IsRecipeValide(_winFormula, out hint))
             {
-                // TODO
+                PlayerController.Instance.PlayWinAnim();
             }
             else
             {
