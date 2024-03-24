@@ -27,6 +27,8 @@ namespace MicroJam10.Player
         [SerializeField]
         private GameObject _playerModel;
 
+        private Animator _anim;
+
         private Vector2 _mov;
         private float _verticalSpeed;
         private CharacterController _controller;
@@ -48,6 +50,8 @@ namespace MicroJam10.Player
             _propSelectionLayer = 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Prop");
             _pentacleSelectionLayer = 1 << LayerMask.NameToLayer("Map") | 1 << LayerMask.NameToLayer("Spot");
 
+            _anim = GetComponentInChildren<Animator>();
+
             Cursor.lockState = CursorLockMode.Locked;
         }
 
@@ -57,6 +61,8 @@ namespace MicroJam10.Player
 
             var pos = _mov;
             Vector3 desiredMove = _cam.transform.forward * pos.y + _cam.transform.right * pos.x;
+
+            _anim.SetBool("IsWalking", _mov.magnitude != 0f);
 
             // Get a normal for the surface that is being touched to move along it
             Physics.SphereCast(transform.position, _controller.radius, Vector3.down, out RaycastHit hitInfo,
@@ -189,6 +195,7 @@ namespace MicroJam10.Player
                             _carriedProp.Spot = null;
                         }
                         _interactionTarget = null;
+                        _anim.SetBool("IsCarrying", true);
                     }
                 }
                 else
@@ -203,8 +210,14 @@ namespace MicroJam10.Player
                         _spotTarget = null;
                     }
                     _carriedProp = null;
+                    _anim.SetBool("IsCarrying", false);
                 }
             }
+        }
+
+        public void PlayEndAnim()
+        {
+            _anim.SetTrigger("Win");
         }
 
         public RaycastHit? GetInteractionTarget(int targetLayer)

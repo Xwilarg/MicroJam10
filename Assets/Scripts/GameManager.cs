@@ -79,6 +79,7 @@ namespace MicroJam10
             {
                 DidRitualStart = true;
                 _turnToRed = true;
+                PlayerController.Instance.PlayEndAnim();
                 PlayerController.Instance.ResetState();
             }
         }
