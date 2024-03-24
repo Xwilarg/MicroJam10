@@ -110,6 +110,7 @@ namespace MicroJam10
             if (IsRecipeValide(_knifeFormula, out var _))
             {
                 PlayerController.Instance.GetKnived();
+                StartCoroutine(WaitAndLoose("Congratulation for finding the secret ending!"));
             }
             else if (IsRecipeValide(_winFormula, out hint))
             {
