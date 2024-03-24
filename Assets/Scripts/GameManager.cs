@@ -116,7 +116,7 @@ namespace MicroJam10
             else
             {
                 PlayerController.Instance.Die();
-                Loose();
+                StartCoroutine(WaitAndLoose());
             }
 
             _globalLight.color = Color.white;
@@ -125,6 +125,12 @@ namespace MicroJam10
             {
                 p.enabled = false;
             }
+        }
+
+        private IEnumerator WaitAndLoose()
+        {
+            yield return new WaitForSeconds(2f);
+            Loose();
         }
     }
 }
